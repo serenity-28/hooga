@@ -34,7 +34,7 @@ header h2 {
 }
 
 .container {
-	width: 70%;
+	width: 90%;
 	margin: 20px auto;
     background-color: white;
     padding: 0px;
@@ -46,21 +46,23 @@ header h2 {
 	flex-flow: row;
 }
 
-.intro {
-	padding: 20px;
-}
-
 .intro h1 {
 	font-size: 50px;
 	margin: 0px;
 	padding: 0px;
-	
+}
+    
+.intro {
+    flex: 2; 
+    padding: 20px;
+    background: white;
+    flex-shrink: 0;
 }
 
 .toc {
-	background: #2E3947;
-	padding: 20px;
-	width: 130%;
+    flex: 1;
+    padding: 20px;
+    background: #2E3947;
 }
 
 p {
@@ -93,9 +95,9 @@ p {
 }
 
 .press-start-2p-regular {
-  font-family: "Press Start 2P", system-ui;
-  font-weight: 400;
-  font-style: normal;
+  	font-family: "Press Start 2P", system-ui;
+ 	font-weight: 400;
+ 	font-style: normal;
 }
 
 
@@ -129,4 +131,3 @@ p {
 		</div>
 	</body>
 </html>
-
