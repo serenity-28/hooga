@@ -4,8 +4,8 @@
 		<link rel="stylesheet" href="style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Monomakh&family=Press+Start+2P&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
-	<style>
+		<link href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Cabin+Sketch:wght@400;700&family=Monomakh&family=Press+Start+2P&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+<style>
 body {
 	margin: 0px;
 	padding: 0px;
@@ -22,7 +22,7 @@ header {
 }
 
 header h1 {
-	font-size: 60px;
+	font-size: 50px;
 	margin: 5px;
 	padding: 0px;
 }
@@ -53,8 +53,8 @@ header h2 {
   	background-color: white;
 }
 		
-.container {
-	width: 70%;
+.container-intro {
+	width: 80%;
 	margin: 20px auto;
     background-color: white;
     padding: 0px;
@@ -64,6 +64,27 @@ header h2 {
 	gap: 20px;
 	display: flex;
 	flex-flow: row;
+}
+
+.container {
+	width: 75%;
+	margin: 20px auto;
+    background-color: white;
+    padding: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    border-radius: 0px;
+	gap: 20px;
+	display: flex;
+	flex-flow: column;
+}
+
+p {
+    text-indent: 40px;
+}
+
+.dont-indent {
+    text-indent: 0px;
 }
 
 .intro h1 {
@@ -99,14 +120,20 @@ p {
 
 li {
 	font-size: 20px;
+    margin: 10px;
 }
 
 li::marker {
 	color: white;
 }
 
-a {
+.toc a {
 	color: white;
+	text-decoration: none;
+}
+
+a {
+	color: #497088;
 	text-decoration: none;
 }
 
@@ -114,6 +141,33 @@ a:hover {
 	color: #D2D1E6;
 }
 
+.game-image {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+   
+.tat-intro {
+	padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 0px;
+}
+ 
+blockquote {
+	padding: 0px;
+}
+
+.tat-intro h1 {
+	margin-bottom: 20px;
+}
+
+.tat {
+	padding: 20px;
+    background: #2E3947;
+    color: white;
+ }
+ 
 .monomakh-regular {
 	font-family: "Monomakh", system-ui;
 	font-weight: 400;
@@ -144,55 +198,88 @@ a:hover {
  	font-style: normal;
 }
 
+.cabin-sketch-regular {
+  	font-family: "Cabin Sketch", sans-serif;
+  	font-weight: 400;
+ 	font-style: normal;
+}
 
-
-	</style>
-	
+.cabin-sketch-bold {
+  	font-family: "Cabin Sketch", sans-serif;
+ 	font-weight: 700;
+ 	font-style: normal;
+}
+</style>
 	</head>
+	
 	<body>
 		<header>
-			<h2 class="monomakh-regular">My Favorite:</h2>
-			<h1 class="press-start-2p-regular">Video Games</h1>
+			<h2 class="monomakh-regular">Favorite Stuff:</h2>
+			<h1 class="press-start-2p-regular">The Ace Attorney Game Series<h1>
 		</header>
 
-		<button onclick="topFunction()" id="myBtn" title="Go to top">&#2191</button>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">&uArr;</button>
 		
-		<div class="container">
+		<div class="container-intro">
 			<div class="intro">
-			<h1 class="bigshot-one-regular">Introduction</h1>
-				<p class="monomakh-regular">My favorite video games are based on story, not from gameplay. Personally, I love stories, I also like watching things, and as someone who doesn't really care about movies and TV shows sometimes, video games with stories are my jam. Most of my exposure to games are from watching youtubers play them, or just from watching a walkthrough. Sure, I do enjoy seeing how the mechanics work and occasionally try them out myself (when I can afford said games), but there's just something so alluring about how the video game shows its story to you. The cutscenes are cinematic a lot of times and it's almost like watching a movie, but video games are not movies and that's what makes it special to me.</p>
-				
-				<p class="monomakh-regular">Sometimes you can even see more lore tidbits from collecting notes, tapes, or even just exploring and talking to different characters. I guess the more movie and TV show adjacent version of this would be web series, and I also enjoy web series, but back to video games. The characters themselves are something I also enjoy in games. Gameplay itself tells us about characters sometimes, how they move when you are controlling them, their voice lines when something crazy happens, I love those little details. Here, I will mention some games and my favorite characters from each one.(The listed games are not in any particular order.)</p>
+			<h1 class="bigshot-one-regular" id=”intro”>Introduction</h1>
+				<p class="monomakh-regular">Ace Attorney is a visual novel adventure game series created by Capcom. It follows the protagonist, defense attorney Phoenix Wright, and his court adventures, where he battles to save his clients. It includes 6 mainline games: the <a href=”https://www.ace-attorney.com/trilogy/us/”>Phoenix Wright: Ace Attorney Trilogy</a> and the <a href=”https://www.ace-attorney.com/aj-trilogy/en-us/”>Apollo Justice: Ace Attorney Trilogy</a>. Plus 4 spin-off games: <a href=”https://www.ace-attorney.com/investigations1-2/en-us/”>Ace Attorney Investigations Collection</a>, where our protagonist is prosecutor Miles Edgeworth, and <a href=”https://www.ace-attorney.com/great1-2/en-asia/”>The Great Ace Attorney Chronicles</a>, where our protagonist is Phoenix Wright’s ancestor, Ryunosuke Naruhodo.</p>
+                <p class="monomakh-regular"> I have either played or watched gameplays of all the games except for The Great Ace Attorney Chronicles, but that doesn't mean I can't list down my favorites. I will talk about some of my favorite games in the series, the cases in it which I liked the most, and my favorite characters from them. (The listed games are not in any specific order, I just like them)</p>
+                <p class="monomakh-regular">There will probably be spoilers.</p>
 			</div>
+            
 			<div class="toc">
 				<h3>Table of Contents</h3>
 				<ul class="zilla-slab-highlight-regular">
-					<li><a href="rdr2">Red Dead Redemption 2</a></li>
-					<li><a href="">1</a></li>
+					<li><a href="#intro">Introduction</a></li>
+					<li><a href="#tat">Trials and Tribulations</a></li>
 					<li><a href="">1</a></li>
 					<li><a href="">1</a></li>
 					<li><a href="">1</a></li>
 				</ul>
 			</div>
 		</div>
+		
+		<div class="container">
+			<div class="tat-intro">
+				<h1 class="bigshot-one-regular">Phoenix Wright: Trials and Tribulations</h1>
+			
+				<img src="https://assets-prd.ignimgs.com/2022/01/31/phoenix-wright-trials-and-tribulations-button-1643615776474.jpg" width="270" height="270" class="game-image">
+				
+				<blockquote cite="https://en.wikipedia.org/wiki/Phoenix_Wright:_Ace_Attorney_%E2%80%93_Trials_and_Tribulations" class="cabin-sketch-regular"><p>"Phoenix Wright: Ace Attorney – Trials and Tribulations is a visual novel adventure video game developed and published by Capcom. It was originally released for the Game Boy Advance in 2004 in Japan, and has since been released for several platforms, including a Nintendo DS version that was released in 2007 in Japan and North America and in 2008 in Europe.</p>
 
+<p style="padding-bottom: 0px; margin-bottom:0px;">The story follows defense attorneys Phoenix Wright and Mia Fey, who defend their clients in five episodes. Among other characters are Phoenix's assistant and Mia's sister Maya, her cousin Pearl, and prosecutor Godot."</p></blockquote>
+			</div>
+            <div class="tat">
+				
+				<p class="monomakh-regular">I liked this game a lot, gameplay wise? It's pretty much the same as the classic Phoenix Wright games, story wise? It's honestly the best in the trilogy. The episodes of the game were not in chronological order, so you had to put to pieces together yourself.</p>
+                
+                <h3 class="monomakh-regular">Episode 1: Turnabout Memories</h3>
+                
+                <p class="monomakh-regular">Here we play 4 years before the actual setting of Trials and Tribulations. Our main character in the case in none other than Mia Fey, and she is here to defend her client, Phoenix Wright!</p>
+                
+                <p class="monomakh-regular"></p>
+			</div>
+		</div>
 		<script>
-let mybutton = document.getElementById("myBtn");
+			let mybutton = document.getElementById("myBtn");
 
-window.onscroll = function() {scrollFunction()};
+			window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
+			function scrollFunction() {
+				if (document.body.scrollTop > 1100 || document.documentElement.scrollTop > 1100) {
+				mybutton.style.display = "block";
+				} else {
+					mybutton.style.display = "none";
+					}
+				}
+	
+				function topFunction() {
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+				}
+		</script>
 	</body>
 </html>
+
+
