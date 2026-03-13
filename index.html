@@ -5,7 +5,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Cabin+Sketch:wght@400;700&family=Monomakh&family=Press+Start+2P&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
-<style>
+		<style>
+
 body {
 	margin: 0px;
 	background-attachment: fixed;
@@ -16,6 +17,13 @@ body {
 	background-size: cover;
 	background-blend-mode: darken; 
 	background-color: rgba(0,0,0,0.6)
+}
+
+@media screen and (max-width:1000px) {
+  	.plot {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
 }
 
 header {
@@ -86,9 +94,6 @@ header h2 {
 	display: flex;
 	flex-flow: column;
 }
-.dont-indent {
-    text-indent: 0px;
-}
 
 .intro h1 {
 	font-size: 50px;
@@ -120,7 +125,41 @@ header h2 {
 	margin: 0px;
 	padding: 0px;
 }
-		
+	
+.tab {
+	overflow: hidden;
+	border: 0px;
+	background-color: #809CAC;
+}
+
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+	font-family: Verdana, sans serif;
+}
+
+.tab button:hover {
+	background-color: #D4DDE3;
+}
+
+.tab button.active {
+	background-color: #D4DDE3;
+}
+
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 5px solid #809CAC;
+	border-top: none;
+	background: #D4DDE3;
+}
+	
 p {
 	text-indent: 40px;
 	text-align: justify;
@@ -132,9 +171,10 @@ li {
 	font-size: 18px;
     margin: 0px;
 	padding: 0px;
+	line-height: 1.5
 }
 
-li::marker {
+.toc li::marker {
 	color: white;
 }
 
@@ -190,12 +230,18 @@ hr {
 .desc {
 	text-align: center;
 	line-height: 1.5;
+	text-indent: 0px;
 }
 
 .plot {
-	margin-right: 100px;
-	margin-left: 100px;
+	margin-right: 70px;
+	margin-left: 70px;
 }
+
+.plot li::marker {
+	color: black;
+}
+
 .monomakh-regular {
 	font-family: "Monomakh", system-ui;
 	font-weight: 400;
@@ -237,7 +283,11 @@ hr {
  	font-weight: 700;
  	font-style: normal;
 }
-</style>
+
+
+
+
+		</style>
 	</head>
 	
 	<body>
@@ -250,8 +300,8 @@ hr {
 		
 		<div class="container-intro">
 			<div class="intro">
-			<h1 class="bigshot-one-regular" id=”intro”>Introduction</h1>
-				<p class="monomakh-regular">Ace Attorney is a visual novel adventure game series created by Capcom. It follows the protagonist, defense attorney Phoenix Wright, and his court adventures, where he battles to save his clients. It includes 6 mainline games: the <a href=”https://www.ace-attorney.com/trilogy/us/”>Phoenix Wright: Ace Attorney Trilogy</a> and the <a href=”https://www.ace-attorney.com/aj-trilogy/en-us/”>Apollo Justice: Ace Attorney Trilogy</a>. Plus 4 spin-off games: <a href=”https://www.ace-attorney.com/investigations1-2/en-us/”>Ace Attorney Investigations Collection</a>, where our protagonist is prosecutor Miles Edgeworth, and <a href=”https://www.ace-attorney.com/great1-2/en-asia/”>The Great Ace Attorney Chronicles</a>, where our protagonist is Phoenix Wright’s ancestor, Ryunosuke Naruhodo.</p>
+			<h1 class="bigshot-one-regular" id="intro">Introduction</h1>
+				<p class="monomakh-regular">Ace Attorney is a visual novel adventure game series created by Capcom. It follows the protagonist, defense attorney Phoenix Wright, and his court adventures, where he battles to save his clients. It includes 6 mainline games: the <a href="https://www.ace-attorney.com/trilogy/us/">Phoenix Wright: Ace Attorney Trilogy</a> and the <a href="https://www.ace-attorney.com/aj-trilogy/en-us/">Apollo Justice: Ace Attorney Trilogy</a>. Plus 4 spin-off games: <a href="https://www.ace-attorney.com/investigations1-2/en-us/">Ace Attorney Investigations Collection</a>, where our protagonist is prosecutor Miles Edgeworth, and <a href="https://www.ace-attorney.com/great1-2/en-asia/">The Great Ace Attorney Chronicles</a>, where our protagonist is Phoenix Wright’s ancestor, Ryunosuke Naruhodo.</p>
                 <p class="monomakh-regular"> I have either played or watched gameplays of all the games except for The Great Ace Attorney Chronicles, but that doesn't mean I can't list down my favorites. I will talk about some of my favorite games in the series, the cases in it which I liked the most, and my favorite characters from them. (The listed games are not in any specific order, I just like them)</p>
                 <p class="monomakh-regular">There will definitely be spoilers.</p>
 			</div>
@@ -276,33 +326,53 @@ hr {
 
 				<blockquote cite="https://en.wikipedia.org/wiki/Phoenix_Wright:_Ace_Attorney_%E2%80%93_Trials_and_Tribulations" class="monomakh-regular"><p class="desc"><mark>"Phoenix Wright: Ace Attorney – Trials and Tribulations is a visual novel adventure video game developed and published by Capcom. It was originally released for the Game Boy Advance in 2004 in Japan, and has since been released for several platforms, including a Nintendo DS version that was released in 2007 in Japan and North America, and in 2008 in Europe.</mark></p>
 
-				<p class="desc"><mark>The story follows defense attorneys Phoenix Wright and Mia Fey, who defend their clients in five episodes. Among other characters are Phoenix's assistant and Mia's sister Maya, her cousin Pearl, and prosecutor Godot."</mark></p></blockquote>
-				<br><br>
-				<p class="monomakh-regular">I liked this game a lot, gameplay-wise? It's pretty much the same as the classic Phoenix Wright games, story-wise? It's honestly the best in the trilogy. The episodes of the game were not in chronological order, so you had to put them together yourself. So here is my favorite case:</p>
+				<p class="desc"><mark>The story follows defense attorneys Phoenix Wright and Mia Fey, who defend their clients in five episodes. Among other characters are Phoenix's assistant and Mia's sister Maya, her cousin Pearl, and prosecutor Godot."</mark></p></blockquote><br>
 				
-				<div class="plot">
-					<h3 class="monomakh-regular">Bridge to the  Turnabout</h3>
-                	<p class="monomakh-regular">The last case and the best one. Phoenix Wright, Maya Fey, and Pearl Fey visit the snowy Hazakura Temple so Maya can complete her spirit medium training. While there, Phoenix meets a nun named Iris who looks exactly like his ex-girlfriend, now convicted murderer, Dahlia Hawthrone. He also meets a children's book author,  Elise Deauxnim, who is actually Mia Fey and Maya’s long-lost mother, Misty Fey, in disguise.</p>
-
-					<p class="monomakh-regular">Later that night, Elise Deauxnim is found dead, stabbed in the temple courtyard. At the same time, Dusky Bridge—which is the only way to get to the Inner Temple where Maya was training— is struck by lightning and is set on fire. Phoenix tries to cross the burning bridge to save Maya but falls into the freezing river below and is hospitalized.</p>
-
-					<p class="monomakh-regular">With Phoenix stuck in the hospital, he asks his friend and rival prosecutor to defend Iris in court, because she was now being suspected of the murder. Edgeworth agrees, taking Phoenix’s attorney badge and magatama. (The magatama is a spiritual object that allows the user to see when people are keeping secrets. Psyche-Locks appear when a secret is being kept, and the more Psyche-Locks there are, the deeper the secret.)</p>
-
-					<p class="monomakh-regular">While investigating, Edgeworth finds out the head nun, Sister Bikini, claims she saw Iris stabbing Elise. He is also given a sketch from Larry Butz depicting what he saw that night: A person flying over the bridge. While in court, it is revealed that Iris and Dahlia are twin sisters and daughters of Morgan Fey. Morgan had planned for Pearl to channel Dahlia’s spirit to kill Maya so Pearl could become the Fey Clan Master. The first trial ends.</p>
-
-					<p class="monomakh-regular">Phoenix soon recovers and returns to his position as defense. During the second trial, we find out that Dahlia Hawthorne’s spirit has actually been channeled and is possessing a body to torment Maya. At first, it is suspected that Pearl was doing the channeling, but it is later debunked when they discover Maya had channeled her first and locked herself in the Inner Temple to keep Dahlia from hurting anybody.</p>
-
-					<p class="monomakh-regular">This enrages Dahlia, who demands to know who had known to foil her and her mother’s plans. Pearl channels someone, and Mia Fey reveals herself as the mastermind. This makes Dahlia even madder because Mia was the one who had her thrown into prison and executed in the first place. Dahlia is later exorcised out of Maya’s body.</p>
-
-					<p class="monomakh-regular">In the end, it is revealed that the prosecutor, Godot, is actually Diego Armando, Mia Fey’s former lover. Armando had been stuck in a 5-year coma after being poisoned by Dahlia. When he woke up, he found out that Mia was dead and Dahlia was in death row, making it feel like he had nothing to do in the world anymore. By being a prosecutor, he found out about Morgan Fey’s plot and went to the temple to "protect" Maya with the help of Misty and Iris. However, his desire for revenge against Dahlia consumed him.</p>
-
-					<p class="monomakh-regular">Godot accepts his guilt, acknowledging that he was trying to play the hero to make up for failing to protect Mia years ago. He declares that Phoenix has proven himself a worthy successor to Mia Fey.</p>
+				<p class="monomakh-regular">I liked this game a lot, gameplay-wise? It's pretty much the same as the classic Phoenix Wright games, story-wise? It's honestly the best in the trilogy. The episodes of the game were not in chronological order, so you had to put them together yourself.</p>
+				
+				<div class="tab">
+						<button class="tablinks" onclick="openTab(event, 0)">Episodes</button>
+						<button class="tablinks" onclick="openTab(event, 1)">My Favorite Case</button>
+						<button class="tablinks" onclick="openTab(event, 2)">Other Opinions</button>
 				</div>
-					<hr>
-					<p class="monomakh-regular">Definitely one of my favorite reveals in Phoenix's games, I could not have suspected that it was Godot behind it all. It was obvious that he was Armando, but the murder part? I could not figure that out. I loved how Dahlia came back, how the story set her up from the first episode, and the big reveal where she came back in the last. She is still one of my favorite main antagonists out of all the games.</p>
-				
-					<p class="monomakh-regular">If it was not obvious, my favorite characters are indeed Dahlia and Godot. A woman raised without the love of parents, who eventually grew to care only for herself, committing multiple crimes, and was defeated by Mia Fey, and this foolish guy, who had nothing going for him, so he had to opt for revenge in the worst way possible, and was later defeated by Phoenix Wright. A great duo if you ask me.</p>
+
+				<div id="eps" class="tabcontent">
+					<h3 class="monomakh-regular">List of Episodes</h3>
+					<ol class="monomakh-regular">
+						<li><a href="https://aceattorney.fandom.com/wiki/Turnabout_Memories">Turnabout Memories</a></li>     
+						<li><a href="https://aceattorney.fandom.com/wiki/The_Stolen_Turnabout">The Stolen Turnabout</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/Recipe_for_Turnabout">Recipe for Turnabout</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/Turnabout_Beginnings">Turnabout Beginnings</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/Bridge_to_the_Turnabout">Bridge to the Turnabout</a></li>
+					</ol>
+				</div>
+
+				<div id="case" class="tabcontent">
+					<div class="plot">
+						<h3 class="monomakh-regular">Bridge to the  Turnabout</h3>
+						<p class="monomakh-regular">The last case and the best one. Phoenix Wright, Maya Fey, and Pearl Fey visit the snowy Hazakura Temple so Maya can complete her spirit medium training. While there, Phoenix meets a nun named Iris who looks exactly like his ex-girlfriend, now convicted murderer, Dahlia Hawthrone. He also meets a children's book author,  Elise Deauxnim, who is actually Mia Fey and Maya’s long-lost mother, Misty Fey, in disguise.</p>
+
+						<p class="monomakh-regular">Later that night, Elise Deauxnim is found dead, stabbed in the temple courtyard. At the same time, Dusky Bridge—which is the only way to get to the Inner Temple where Maya was training— is struck by lightning and is set on fire. Phoenix tries to cross the burning bridge to save Maya but falls into the freezing river below and is hospitalized.</p>
+
+						<p class="monomakh-regular">With Phoenix stuck in the hospital, he asks his friend and rival prosecutor to defend Iris in court, because she was now being suspected of the murder. Edgeworth agrees, taking Phoenix’s attorney badge and magatama. (The magatama is a spiritual object that allows the user to see when people are keeping secrets. Psyche-Locks appear when a secret is being kept, and the more Psyche-Locks there are, the deeper the secret.)</p>
 	
+						<p class="monomakh-regular">While investigating, Edgeworth finds out the head nun, Sister Bikini, claims she saw Iris stabbing Elise. He is also given a sketch from Larry Butz depicting what he saw that night: A person flying over the bridge. While in court, it is revealed that Iris and Dahlia are twin sisters and daughters of Morgan Fey. Morgan had planned for Pearl to channel Dahlia’s spirit to kill Maya so Pearl could become the Fey Clan Master. The first trial ends.</p>
+
+						<p class="monomakh-regular">Phoenix soon recovers and returns to his position as defense. During the second trial, we find out that Dahlia Hawthorne’s spirit has actually been channeled and is possessing a body to torment Maya. At first, it is suspected that Pearl was doing the channeling, but it is later debunked when they discover Maya had channeled her first and locked herself in the Inner Temple to keep Dahlia from hurting anybody.</p>
+
+						<p class="monomakh-regular">This enrages Dahlia, who demands to know who had known to foil her and her mother’s plans. Pearl channels someone, and Mia Fey reveals herself as the mastermind. This makes Dahlia even madder because Mia was the one who had her thrown into prison and executed in the first place. Dahlia is later exorcised out of Maya’s body.</p>
+
+						<p class="monomakh-regular">In the end, it is revealed that the prosecutor, Godot, is actually Diego Armando, Mia Fey’s former lover. Armando had been stuck in a 5-year coma after being poisoned by Dahlia. When he woke up, he found out that Mia was dead and Dahlia was in death row, making it feel like he had nothing to do in the world anymore. By being a prosecutor, he found out about Morgan Fey’s plot and went to the temple to "protect" Maya with the help of Misty and Iris. However, his desire for revenge against Dahlia consumed him.</p>
+
+						<p class="monomakh-regular">Godot accepts his guilt, acknowledging that he was trying to play the hero to make up for failing to protect Mia years ago. He declares that Phoenix has proven himself a worthy successor to Mia Fey.</p>
+					</div>
+				</div>
+
+				<div id="oth" class="tabcontent">
+					<p class="monomakh-regular">Definitely one of my favorite reveals in Phoenix's games, I could not have suspected that it was Godot behind it all. It was obvious that he was Armando, but the murder part? I could not figure that out. I loved how Dahlia was introduced, how the story set her up from the first episode, and the big reveal where she came back in the last. She is still one of my favorite main antagonists out of all the games.</p>
+				
+					<p class="monomakh-regular">If it was not obvious, my favorite characters are indeed Dahlia and Godot. A woman raised without the love of parents, who eventually grew to care only for herself, committing multiple crimes, to be defeated by Mia Fey, and this foolish guy, who had nothing going for him, so he had to opt for revenge in the worst way possible, and was later defeated by Phoenix Wright. A great duo if you ask me.</p>
+				</div>
 			</div>
 		</div>
 
@@ -310,44 +380,66 @@ hr {
 			<div class="ok">
 				<h1 id="soj" class="bigshot-one-regular">Phoenix Wright: Ace Attorney - Spirit of Justice</h1>
 			
-				<img src="https://www.capcom-games.com/product/wp-content/uploads/sites/3/2021/09/product_aa6_thumb_enus.jpg" width="270" height="270" class="game-image" style="margin-bottom: 100px;">
+				<img src="https://www.capcom-games.com/product/wp-content/uploads/sites/3/2021/09/product_aa6_thumb_enus.jpg" width="270" height="270" class="game-image">
 			
 				<blockquote cite="https://en.wikipedia.org/wiki/Phoenix_Wright:_Ace_Attorney_%E2%80%93_Spirit_of_Justice" class="monomakh-regular"><p class="desc"><mark>"Phoenix Wright: Ace Attorney – Spirit of Justice is a visual novel adventure video game developed and published by Capcom. The game was released for Nintendo 3DS in Japan in June 2016, and in North America and Europe in September that year. Versions for iOS and Android followed a year later in September 2017, and it was released for Nintendo Switch, PlayStation 4, Windows, and Xbox One in January 2024 as part of the Apollo Justice: Ace Attorney Trilogy compilation.</mark></p>
 
-				<p class="desc"><mark>The game primarily follows Phoenix Wright as he travels to the fictitious Kingdom of Khura'in to see Maya Fey, only to come into conflict with the country's court system, where defense attorneys have been deemed unnecessary, and verdicts are decided based on a mystical vision called the "Divination Séance". Meanwhile, Phoenix's subordinates, Apollo Justice and Athena Cykes, take on cases at the Wright Anything Agency in his absence."</mark></p></blockquote>
+				<p class="desc"><mark>The game primarily follows Phoenix Wright as he travels to the fictitious Kingdom of Khura'in to see Maya Fey, only to come into conflict with the country's court system, where defense attorneys have been deemed unnecessary, and verdicts are decided based on a mystical vision called the "Divination Séance". Meanwhile, Phoenix's subordinates, Apollo Justice and Athena Cykes, take on cases at the Wright Anything Agency in his absence."</mark></p></blockquote><br>
 				
-				<p class="monomakh-regular">This is the latest game in the main storyline and the last of the Apollo Justice trilogy. The game had so many new mechanics added that it just had me stumped. I was confused in most of the cases, but it was really fun to play; the name puns get more ridiculous, and so do the culprit breakdowns. I think again, my favorite case would be the last, which is usually the best one. This case was way too long, but hey, I enjoyed myself.</p> 
+				<p class="monomakh-regular">This is the latest game in the main storyline and the last of the Apollo Justice trilogy. The game had so many new mechanics added that it just had me stumped. I was confused in most of the cases, but it was really fun to play; the name puns get more ridiculous, and so do the culprit breakdowns. I think again, my favorite case would be the last, which is usually the best one. This case was way too long, but hey, I enjoyed myself.</p><br>
 				
-				<div class="plot">
-					<h3 class="monomakh-regular">Turnabout Revolution</h3>
-                	<p class="monomakh-regular">We are greeted with the appearance of Dhurke Sahdmadhi, the leader of the Khura’inist revolution. He comes in as a client and is there to unite with his foster son, Apollo Justice. Apollo is unwelcoming at first, but begrudgingly listens to what Dhurke has to say. Dhurke reveals his mission in the United States is to retrieve the Founder’s Orb, a sacred Khura’inist relic currently in the possession of an archaeologist named Dr. Archie Buff.</p> 
-				
-					<p class="monomakh-regular">However, when they arrive at his home to receive the orb, they find Dr. Buff dead, and a corrupt, arrogant politician named Paul Atishon claims the orb as a family heirloom. A bit of investigation leads to a kind of father-son bonding time. Apollo and Dhurke eventually find the orb in a cave, but are later intercepted by Atishon, who demands they settle the feud in court. This leads to a civil trial where Apollo must face his own mentor, Phoenix Wright, who, for some reason, has chosen to defend Atishon.</p> 
-				
-					<p class="monomakh-regular">Phoenix is uncharacteristically ruthless during the trial because he is being blackmailed. The Khura’inist Minister of Justice has kidnapped Maya Fey, and her life depends on Phoenix securing the orb for Atishon. Despite the crazy pressure, Apollo stays true to his beliefs and proves that Atishon murdered Dr. Buff.</p> 
-					
-					<p class="monomakh-regular">The group: Apollo, Phoenix, Athena Cykes(A fellow lawyer and another student of Phoenix), Edgeworth, and Dhurke, travel to the Kingdom of Khura’in, where the hostage exchange at the royal palace goes horribly wrong. The Minister of Justice, Inga Karkhuul Khura’in, is discovered dead in the Tomb of the Holy Mother, and Dhurke is found standing over the body with a knife, leading to his immediate arrest.</p> 
-				
-					<p class="monomakh-regular">Apollo prepares to defend his foster father in a court presided over by the terrifying Queen Ga’ran. He is forced to deal with the Divination Séances (Seances where the Princess Rayfa Padma Khura’in shows the victim's last memories; it is usually done to falsely incriminate the accused) and a legal system ready to send him to the nearest chopping block if he dares to mess up. Dhurke manages to escape custody during the trial; the reason was to rescue his love from the royal family’s prison. It is soon discovered that the supposed dead queen, Queen Amara, who is the person Dhurke had wanted to rescue, was alive and was, in fact, not in prison.</p> 
-				
-					<p class="monomakh-regular">Stakes get worse as Apollo realizes that accusing Amara would reveal something terrible. Dhurke Sahdmadhi had actually been dead for several days. He had been shot by Minister Inga during the initial rescue of Maya Fey. Amara had channeled him, and that was why she was nowhere to be found at the crime scene. His escape was to release Amara, not from prison but from channeling him.</p>
-				
-					<p class="monomakh-regular">Maya, on the witness stand, tells everyone that before passing away, Dhurke had asked her to channel his spirit so he could see his son, Apollo, again. Maya kept that promise. </p>
-				
-					<p class="monomakh-regular">In the final confrontation, Queen Ga’ran takes the prosecutor’s bench herself, using her authority to rewrite the laws of the land in real-time to ensure Apollo’s execution. However, Apollo refuses to give up. With his mentor by his side, they eventually proved that Ga'ran was the true mastermind who murdered Inga because he was planning a coup. They further expose her as the one behind the palace fire twenty-three years ago, an event that claimed the life of Apollo’s biological father, Jove Justice.</p> 
-				
-					<p class="monomakh-regular">The true victory comes in when Apollo proves that Ga’ran possesses no spiritual power at all. Since the Khura’inist throne is strictly reserved for those who can channel spirits, her entire reign is revealed to be a fraud. This revelation instantly strips her of her royal authority, removing the Defense Culpability Act (A law passed so that defense attorneys who fail to defend their client would suffer the same punishment as the person they are defending) and causing her own royal guards to turn against her as she suffers a mental breakdown on the stand.</p>
-				
-					<p class="monomakh-regular">With Ga’ran’s regime gone, the Dark Age of the Law in Khura’in comes to an end, and the legal system begins a slow process of healing. Nahyuta Sahdmadhi, Dhurke’s biological son, is finally liberated from the Queen’s power, and Princess Rayfa begins her journey toward becoming a just and fair ruler. In the end, Apollo decides to stay in Khura’in and honor his foster father’s legacy. He will help rebuild the justice system from the ground up.</p>
-					<p class="monomakh-regular">Apollo says his goodbyes to his friends and mentor and then goes on to create his own “Justice Law Offices.”</p>
+				<div class="tab">
+					<button class="tablinks" onclick="openTab(event, 0)">Episodes</button>
+					<button class="tablinks" onclick="openTab(event, 1)">My Favorite Case</button>
+					<button class="tablinks" onclick="openTab(event, 2)">Other Opinions</button>
 				</div>
-					<hr>
+
+				<div id="eps" class="tabcontent">
+					<h3>List of Episodes</h3>
+					<ol>
+						<li><a href="https://aceattorney.fandom.com/wiki/The_Foreign_Turnabout">The Foreign Turnabout</a></li>     
+						<li><a href="https://aceattorney.fandom.com/wiki/The_Magical_Turnabout">The Magical Turnabout</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/The_Rite_of_Turnabout">The Rite of Turnabout</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/Turnabout_Storyteller">Turnabout Storyteller</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/Turnabout_Revolution">Turnabout Revolution</a></li>
+						<li><a href="https://aceattorney.fandom.com/wiki/Turnabout_Time_Traveler">Turnabout Time Traveler - Special Episode</a></li>
+					</ol>
+				</div>
+
+				<div id="case" class="tabcontent">
+					<div class="plot">
+						<h3 class="monomakh-regular">Turnabout Revolution</h3>
+						<p class="monomakh-regular">We are greeted with the appearance of Dhurke Sahdmadhi, the leader of the Khura’inist revolution. He comes in as a client and is there to unite with his foster son, Apollo Justice. Apollo is unwelcoming at first, but begrudgingly listens to what Dhurke has to say. Dhurke reveals his mission in the United States is to retrieve the Founder’s Orb, a sacred Khura’inist relic currently in the possession of an archaeologist named Dr. Archie Buff.</p> 
+				
+						<p class="monomakh-regular">However, when they arrive at his home to receive the orb, they find Dr. Buff dead, and a corrupt, arrogant politician named Paul Atishon claims the orb as a family heirloom. A bit of investigation leads to a kind of father-son bonding time. Apollo and Dhurke eventually find the orb in a cave, but are later intercepted by Atishon, who demands they settle the feud in court. This leads to a civil trial where Apollo must face his own mentor, Phoenix Wright, who, for some reason, has chosen to defend Atishon.</p> 
+				
+						<p class="monomakh-regular">Phoenix is uncharacteristically ruthless during the trial because he is being blackmailed. The Khura’inist Minister of Justice has kidnapped Maya Fey, and her life depends on Phoenix securing the orb for Atishon. Despite the crazy pressure, Apollo stays true to his beliefs and proves that Atishon murdered Dr. Buff.</p> 
+					
+						<p class="monomakh-regular">The group: Apollo, Phoenix, Athena Cykes(A fellow lawyer and another student of Phoenix), Edgeworth, and Dhurke, travel to the Kingdom of Khura’in, where the hostage exchange at the royal palace goes horribly wrong. The Minister of Justice, Inga Karkhuul Khura’in, is discovered dead in the Tomb of the Holy Mother, and Dhurke is found standing over the body with a knife, leading to his immediate arrest.</p> 
+				
+						<p class="monomakh-regular">Apollo prepares to defend his foster father in a court presided over by the terrifying Queen Ga’ran. He is forced to deal with the Divination Séances (Seances where the Princess Rayfa Padma Khura’in shows the victim's last memories; it is usually done to falsely incriminate the accused) and a legal system ready to send him to the nearest chopping block if he dares to mess up. Dhurke manages to escape custody during the trial; the reason was to rescue his love from the royal family’s prison. It is soon discovered that the supposed dead queen, Queen Amara, who is the person Dhurke had wanted to rescue, was alive and was, in fact, not in prison.</p> 
+				
+						<p class="monomakh-regular">Stakes get worse as Apollo realizes that accusing Amara would reveal something terrible. Dhurke Sahdmadhi had actually been dead for several days. He had been shot by Minister Inga during the initial rescue of Maya Fey. Amara had channeled him, and that was why she was nowhere to be found at the crime scene. His escape was to release Amara, not from prison but from channeling him.</p>
+				
+						<p class="monomakh-regular">Maya, on the witness stand, tells everyone that before passing away, Dhurke had asked her to channel his spirit so he could see his son, Apollo, again. Maya kept that promise. </p>
+				
+						<p class="monomakh-regular">In the final confrontation, Queen Ga’ran takes the prosecutor’s bench herself, using her authority to rewrite the laws of the land in real-time to ensure Apollo’s execution. However, Apollo refuses to give up. With his mentor by his side, they eventually proved that Ga'ran was the true mastermind who murdered Inga because he was planning a coup. They further expose her as the one behind the palace fire twenty-three years ago, an event that claimed the life of Apollo’s biological father, Jove Justice.</p> 
+				
+						<p class="monomakh-regular">The true victory comes in when Apollo proves that Ga’ran possesses no spiritual power at all. Since the Khura’inist throne is strictly reserved for those who can channel spirits, her entire reign is revealed to be a fraud. This revelation instantly strips her of her royal authority, removing the Defense Culpability Act (A law passed so that defense attorneys who fail to defend their client would suffer the same punishment as the person they are defending) and causing her own royal guards to turn against her as she suffers a mental breakdown on the stand.</p>
+				
+						<p class="monomakh-regular">With Ga’ran’s regime gone, the Dark Age of the Law in Khura’in comes to an end, and the legal system begins a slow process of healing. Nahyuta Sahdmadhi, Dhurke’s biological son, is finally liberated from the Queen’s power, and Princess Rayfa begins her journey toward becoming a just and fair ruler. In the end, Apollo decides to stay in Khura’in and honor his foster father’s legacy. He will help rebuild the justice system from the ground up.</p>
+						
+						<p class="monomakh-regular">Apollo says his goodbyes to his friends and mentor and then goes on to create his own “Justice Law Offices.”</p>
+					</div>
+				</div>
+
+				<div id="oth" class="tabcontent">
 					<p class="monomakh-regular">I actually really enjoyed the new setting we are introduced to, Khura'in is such a beautiful place if you ignore the law system. Although I had a hard time with the new mechanics, and yes, dealing with Divination Séances was a pain, I enjoyed the story a lot. It was a very long episode and definitely worth it. Queen Ga'ran was great, although not the best antagonist in the trilogy; she was still a great one. Dhurke's reveal was crazy, and I think I would've reacted more if I didn't somehow jokingly guess it when I was playing.</p>
 				
 					<p class="monomakh-regular">Thinking about it, the big reveal with spirit channeling is a little bit similar to that of Trials and Tribulations' final case. Maybe that's why I like it. The story was bittersweet in the end. Apollo reconnected with his past, saved his brother from the Queen's manipulations, fulfilled Dhurke's legacy of revolution, said goodbye to his friends, and he even got to see a tiny bit of his biological father again. I think it is a fine ending to Apollo's story, and I really, really want the Athena Cykes trilogy.</p>
 
 					<p class="monomakh-regular">My favorite characters were Dhurke and Rayfa. Dhurke is a kind-hearted man and one of the few good fathers in Ace Attorney. Everything he did throughout the case was all for his children. He wanted to see Apollo again and even gave him a picture of his biological father; he wanted to save Nahyuta from the Queen's clutches and make sure he could genuinely smile again. He loved them and Amara so much. Rayfa, another one of Dhurke's kids, although we don't actually know if Dhurke knew that she was his, I know well that he would love her too. I enjoyed her development from a spoiled princess to someone who genuinely wanted to change and become a better person. She shows guilt when she realizes that her seances were used to falsely accuse rather than bring justice, and she promises she would use her skills to help bring about a better age of law. I know when she grows up, she will be a good queen.</p>
-				
+				</div>
 			</div>
 		</div>
 
@@ -385,8 +477,30 @@ hr {
 				document.body.scrollTop = 0;
 				document.documentElement.scrollTop = 0;
 				}
+			
+				function openTab(evt, tabIndex) {
+      let container = evt.currentTarget.closest('.ok');
+    
+    let tabcontent = container.getElementsByClassName("tabcontent");
+    let tablinks = container.getElementsByClassName("tablinks");
+
+      for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+     for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+      tabcontent[tabIndex].style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+			
 		</script>
 	</body>
 </html>
+
+
 
 
